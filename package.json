@@ -1,9 +1,11 @@
 {
   "name": "spectraops",
   "private": true,
-  "workspaces": [
-    "packages/*",
-    "cli",
-    "dashboard"
-  ]
+  "packageManager": "pnpm@10.29.3",
+  "scripts": {
+    "dev:api": "pnpm --filter core-engine dev",
+    "dev:dashboard": "pnpm --filter dashboard dev",
+    "build": "pnpm -r build",
+    "test": "pnpm -r test"
+  }
 }

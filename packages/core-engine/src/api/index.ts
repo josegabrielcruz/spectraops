@@ -1,12 +1,13 @@
-// API Gateway placeholder
-// TODO: Implement REST/GraphQL API using Express or Fastify
-import express from 'express';
+// API Gateway
+import express, { type Express } from 'express';
+import cors from 'cors';
 import errorRouter from './error';
 
-const app = express();
+const app: Express = express();
+app.use(cors());
 app.use(express.json());
 
-app.get('/health', (req, res) => {
+app.get('/health', (_req, res) => {
   res.json({ status: 'ok', service: 'SpectraOps Core Engine API' });
 });
 

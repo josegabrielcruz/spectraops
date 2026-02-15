@@ -1,0 +1,16 @@
+{
+  "name": "@spectraops/error-tracking",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "dist/client.js",
+  "types": "dist/client.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "vitest run"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0",
+    "vitest": "^2.1.9"
+  }
+}
