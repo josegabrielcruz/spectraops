@@ -1,0 +1,27 @@
+# Node
+node_modules/
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Build output
+dist/
+build/
+coverage/
+*.tsbuildinfo
+
+# Env files
+.env
+.env.*
+
+# Vite
+.vite/
+
+# Mac system files
+.DS_Store
+
+# IDEs
+.vscode/
+.idea/
+*.swp
