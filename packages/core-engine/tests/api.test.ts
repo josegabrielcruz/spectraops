@@ -148,7 +148,7 @@ vi.mock('../src/data/pool', () => ({
 
 // Suppress pino logs during tests
 vi.mock('../src/logger', () => {
-  const noopLogger: Record<string, any> = {
+  const noopLogger: Record<string, unknown> = {
     info: vi.fn(),
     warn: vi.fn(),
     error: vi.fn(),

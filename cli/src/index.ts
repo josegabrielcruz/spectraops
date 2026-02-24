@@ -4,7 +4,7 @@ import { hideBin } from 'yargs/helpers';
 
 // SpectraOps CLI entry point
 
-yargs(hideBin(process.argv))
+void yargs(hideBin(process.argv))
   .scriptName('spectraops')
   .usage('$0 <cmd> [args]')
   .command(

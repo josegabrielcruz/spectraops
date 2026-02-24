@@ -50,7 +50,7 @@ router.post('/', async (req, res) => {
 
     await storeError({ ...sanitised, project_id: projectId });
     res.status(201).json({ status: 'ok' });
-  } catch (e) {
+  } catch (_e) {
     res.status(500).json({ status: 'error', message: 'Failed to store error' });
   }
 });
@@ -81,7 +81,7 @@ router.post('/batch', async (req, res) => {
 
     await storeErrorBatch(sanitised);
     res.status(201).json({ status: 'ok', accepted: sanitised.length });
-  } catch (e) {
+  } catch (_e) {
     res
       .status(500)
       .json({ status: 'error', message: 'Failed to store errors' });
@@ -113,7 +113,7 @@ router.get('/', async (req, res) => {
       data: rows,
       pagination: { page, limit, total, totalPages: Math.ceil(total / limit) },
     });
-  } catch (e) {
+  } catch (_e) {
     res
       .status(500)
       .json({ status: 'error', message: 'Failed to fetch errors' });
