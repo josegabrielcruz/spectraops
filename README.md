@@ -218,16 +218,16 @@ See [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md) for the full production deployment 
 
 ## Roadmap
 
-SpectraOps v1 ships with full error tracking. Here's what's next:
-
 - [x] Error tracking — ingestion, storage, dashboard, SDK
 - [x] Authentication & project management
 - [x] Docker deployment & CI pipeline
-- [ ] Session replay — see exactly what the user saw and did
-- [ ] Visual regression testing — catch pixel-level CSS breakage automatically
-- [ ] Feature flags — roll out gradually, roll back instantly
-- [ ] QA automation — run checks on every deploy
-- [ ] Hosted cloud offering
+- [ ] Dashboard filtering by severity, environment, and date range
+- [ ] Error grouping and deduplication (fingerprinting)
+- [ ] Alerting — Slack, email, and webhook notifications
+- [ ] Node.js SDK variant
+- [ ] Source map upload and deobfuscated stack traces
+
+Have an idea? [Open an issue](https://github.com/spectraops/spectraops/issues).
 
 ---
 
