@@ -3,9 +3,27 @@
   "private": true,
   "packageManager": "pnpm@10.29.3",
   "scripts": {
+    "dev": "concurrently -n api,dashboard -c blue,green \"pnpm run dev:api\" \"pnpm run dev:dashboard\"",
     "dev:api": "pnpm --filter core-engine dev",
     "dev:dashboard": "pnpm --filter dashboard dev",
+    "start": "pnpm --filter core-engine start",
     "build": "pnpm -r build",
-    "test": "pnpm -r test"
+    "test": "pnpm -r test",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "migrate:up": "pnpm --filter core-engine migrate:up",
+    "migrate:down": "pnpm --filter core-engine migrate:down",
+    "migrate:create": "pnpm --filter core-engine migrate:create",
+    "docker:up": "docker compose up -d",
+    "docker:down": "docker compose down",
+    "docker:build": "docker compose build"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.18.0",
+    "concurrently": "^9.2.1",
+    "eslint": "^9.18.0",
+    "prettier": "^3.4.0",
+    "typescript-eslint": "^8.20.0"
   }
 }

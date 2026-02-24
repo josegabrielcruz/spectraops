@@ -13,7 +13,9 @@ coverage/
 
 # Env files
 .env
-.env.*
+.env.local
+.env.*.local
+!.env.example
 
 # Vite
 .vite/

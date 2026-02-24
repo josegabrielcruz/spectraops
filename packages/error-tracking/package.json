@@ -1,16 +1,40 @@
 {
   "name": "@spectraops/error-tracking",
   "version": "0.1.0",
-  "private": true,
+  "description": "Lightweight error-tracking SDK for SpectraOps",
   "type": "module",
   "main": "dist/client.js",
+  "module": "dist/client.js",
   "types": "dist/client.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/client.js",
+      "types": "./dist/client.d.ts"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
   "scripts": {
     "build": "tsc",
-    "test": "vitest run"
+    "test": "vitest run",
+    "prepublishOnly": "pnpm build"
+  },
+  "keywords": [
+    "error-tracking",
+    "observability",
+    "spectraops"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-org/spectraops.git",
+    "directory": "packages/error-tracking"
   },
   "devDependencies": {
-    "typescript": "^5.0.0",
-    "vitest": "^2.1.9"
+    "typescript": "^5.7.0",
+    "vitest": "^3.2.0"
   }
 }

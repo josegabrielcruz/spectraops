@@ -1,4 +1,4 @@
 packages:
-  - 'packages/*'
-  - 'cli'
-  - 'dashboard'
+  - packages/*
+  - cli
+  - dashboard

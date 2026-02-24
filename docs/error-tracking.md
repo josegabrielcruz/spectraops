@@ -1,6 +1,6 @@
 # Error Tracking Flow
 
-1. The client SDK captures errors and sends them to the SpectraOps API (`/api/errors`).
+1. The client SDK captures errors, batches them, and sends them to the SpectraOps API (`POST /api/errors/batch`).
 2. The API receives and stores errors in the database.
 3. The dashboard fetches and displays errors for review.
 

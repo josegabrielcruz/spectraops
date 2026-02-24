@@ -1,27 +1,34 @@
 # SpectraOps Dashboard
 
-This is the web UI for SpectraOps. It will provide unified views for errors, sessions, visual diffs, feature flags, and QA results.
+React + Vite + Tailwind CSS web UI for SpectraOps. Provides error management, project/API-key administration, and user authentication.
 
-## Tech Stack Proposal
+## Tech Stack
 
-- React (with Vite or Next.js)
-- TypeScript
-- Tailwind CSS (for rapid styling)
+- **React 18** with TypeScript
+- **Vite 6** (dev server + production build)
+- **Tailwind CSS 3** for styling
+
+## Features
+
+- **Login / Register** — email + password authentication with password policy (8+ chars, uppercase, lowercase, digit)
+- **Error list** — paginated, severity-coloured badges, expandable stack traces, environment tags
+- **Project management** — create / delete projects, copy / rotate API keys
+- **Error boundary** — graceful crash recovery with reload button
+- **401 interception** — automatic redirect to login on session expiry
 
 ## Getting Started
 
-1. Install dependencies:
-   ```bash
-   pnpm install
-   ```
-2. Start the dev server:
-   ```bash
-   pnpm dev
-   ```
+```bash
+pnpm install
+pnpm dev:dashboard    # starts at http://localhost:5173
+```
 
-## TODO
+In dev mode, the Vite dev proxy forwards `/api` requests to `http://localhost:3000` (the Core Engine API). No `VITE_API_URL` is needed locally.
 
-- Scaffold React app
-- Set up routing and authentication
-- Connect to API gateway
-- Add placeholder pages for each feature
+## Production Build
+
+```bash
+VITE_API_URL=https://api.your-domain.com pnpm --filter dashboard build
+```
+
+The output goes to `dashboard/dist/` — serve it with any static file server (nginx, Caddy, Cloudflare Pages, etc.).
